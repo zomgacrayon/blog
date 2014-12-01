@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Coerced to create a blog out of thin air.</h1>
+  <p>Cheryll's Magic Show to be presented to Master Teng (just before crying)!</p>
+  <a href="http://tinypic.com?ref=2mmeghs" target="_blank"><img src="http://i62.tinypic.com/2mmeghs.png" border="0" alt="Image and video hosting by TinyPic"></a>
+  <p><a href="/posts/create">Create a new post!</a></p>
+</div>
+
+<div class="container">
+  <table>
+    <tr>
+      <td style="width:40%"><b> Title </td>
+    </tr>
+    <%@posts.each do |post|%>
+    <tr>
+      <td><%=post.title%></td>
+      <td><p><a href = "/posts/<%= post.id %>"> View</a></p></td>
+      <td><p><a href = "/posts/<%= post.id %>/edit"> Edit</a></p></td>
+      <td><form action="/posts/<%= post.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">Delete</button>
+        </form>
+        </td>
+      <%end%>
+  </table>
+</div>

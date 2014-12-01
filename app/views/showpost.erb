@@ -1,0 +1,18 @@
+<div class="container">
+
+<table>
+  <tr>
+    <td style="width:20%"><b> Title </td>
+  </tr>
+  <%@posts.each do |post|%>
+  <tr>
+    <td><%=post.title%></td>
+    <td><p><a href = "/posts/<%= post.id %>">View</a></p></td>
+    <td><p><a href = "/posts/<%= post.id %>/edit">Edit</a></p></td>
+    <td><p><a href = "/posts/<%= post.id%>/delete">Delete</a><p></td>
+    <%end%>
+</table>
+
+<p> Create new Post: <a href ="/posts/create">New</a></p>
+
+</div>
